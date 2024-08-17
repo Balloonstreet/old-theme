@@ -1,0 +1,754 @@
+<form id="myForm">
+
+  <div class="m-textinput" style="text-align: left; display:flex;">
+    <p class="fieldtitle">Which Balloon Number You Want?<span class="tooltip" tooltip="Kindly note: Balloon substitutions may occur based on stock availability. We assure you of comparable quality. Thank you for your understanding.">
+        <!-- Tooltip icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+          <path d="M 25 2 C 12.264481 2 2 12.264481 2 25 C 2 37.735519 12.264481 48 25 48 C 37.735519 48 48 37.735519 48 25 C 48 12.264481 37.735519 2 25 2 z M 25 4 C 36.664481 4 46 13.335519 46 25 C 46 36.664481 36.664481 46 25 46 C 13.335519 46 4 36.664481 4 25 C 4 13.335519 13.335519 4 25 4 z M 25 11 A 3 3 0 0 0 25 17 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 23 23 L 23 36 L 21 36 L 21 38 L 29 38 L 29 36 L 27 36 L 27 21 L 21 21 z"/>
+        </svg>
+        <!-- End of tooltip icon SVG -->
+      </span></p>
+    <div class="material-textfield">
+      <input id="text1" placeholder=" " type="text" maxlength="1" oninput="validateInput(this)" onkeypress="return allowAlphanumeric(event)">
+      <label>Enter Your Preferred Number Here</label>
+    </div>
+    <p class="helptext">This is single number (0-9) Balloon</p>
+    <div id="errorText1" class="error-text" style="display:none; color:red;">This field is required</div>
+  </div>
+
+  <div class="text-color">
+    <p class="fieldtitle">Do you want to change Number Balloon Color?<span class="tooltip" tooltip="Kindly note: Balloon substitutions may occur based on stock availability. We assure you of comparable quality. Thank you for your understanding.">
+        <!-- Tooltip icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+          <path d="M 25 2 C 12.264481 2 2 12.264481 2 25 C 2 37.735519 12.264481 48 25 48 C 37.735519 48 48 37.735519 48 25 C 48 12.264481 37.735519 2 25 2 z M 25 4 C 36.664481 4 46 13.335519 46 25 C 46 36.664481 36.664481 46 25 46 C 13.335519 46 4 36.664481 4 25 C 4 13.335519 13.335519 4 25 4 z M 25 11 A 3 3 0 0 0 25 17 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 23 23 L 23 36 L 21 36 L 21 38 L 29 38 L 29 36 L 27 36 L 27 21 L 21 21 z"/>
+        </svg>
+        <!-- End of tooltip icon SVG -->
+      </span></p>
+               <div class="radio">
+      <input type="radio" name="textcoloryes" id="textcolorno" class="radio__input" checked onclick="toggleColorSelect1('textcolorselect', !this.checked)">
+      <label for="textcolorno" class="radio__label">NO, Thanks</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="textcoloryes" id="textcoloryes" class="radio__input" onclick="toggleColorSelect1('textcolorselect', this.checked)">
+      <label for="textcoloryes" class="radio__label">YES, Please</label>
+    </div>
+
+  </div>
+
+  <div class="textcolorselect" style="display: none;">
+ <p class="fieldtitle">Please add the Number Balloon Color<span class="tooltip" tooltip="Kindly note: Balloon substitutions may occur based on stock availability. We assure you of comparable quality. Thank you for your understanding.">
+        <!-- Tooltip icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+          <path d="M 25 2 C 12.264481 2 2 12.264481 2 25 C 2 37.735519 12.264481 48 25 48 C 37.735519 48 48 37.735519 48 25 C 48 12.264481 37.735519 2 25 2 z M 25 4 C 36.664481 4 46 13.335519 46 25 C 46 36.664481 36.664481 46 25 46 C 13.335519 46 4 36.664481 4 25 C 4 13.335519 13.335519 4 25 4 z M 25 11 A 3 3 0 0 0 25 17 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 23 23 L 23 36 L 21 36 L 21 38 L 29 38 L 29 36 L 27 36 L 27 21 L 21 21 z"/>
+        </svg>
+        <!-- End of tooltip icon SVG -->
+      </span></p>
+    <select>
+      <option>Sliver</option>
+      <option>Gold</option>
+      <option>Pink</option>
+      <option>Blue</option>
+      <option>Black</option>
+    </select>
+  </div>
+
+  <div class="latex-color">
+ <p class="fieldtitle">Do you want us to change latex Balloons Color?<span class="tooltip" tooltip="Kindly note: Balloon substitutions may occur based on stock availability. We assure you of comparable quality. Thank you for your understanding.">
+        <!-- Tooltip icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+          <path d="M 25 2 C 12.264481 2 2 12.264481 2 25 C 2 37.735519 12.264481 48 25 48 C 37.735519 48 48 37.735519 48 25 C 48 12.264481 37.735519 2 25 2 z M 25 4 C 36.664481 4 46 13.335519 46 25 C 46 36.664481 36.664481 46 25 46 C 13.335519 46 4 36.664481 4 25 C 4 13.335519 13.335519 4 25 4 z M 25 11 A 3 3 0 0 0 25 17 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 23 23 L 23 36 L 21 36 L 21 38 L 29 38 L 29 36 L 27 36 L 27 21 L 21 21 z"/>
+        </svg>
+        <!-- End of tooltip icon SVG -->
+      </span></p>
+                <div class="radio">
+      <input type="radio" name="latex" id="latexcolorno" class="radio__input" checked onclick="toggleColorSelect2('latexcolor', !this.checked)">
+      <label for="latexcolorno" class="radio__label">NO, Thanks</label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="latex" id="latexcoloryes" class="radio__input" onclick="toggleColorSelect2('latexcolor', this.checked)">
+      <label for="latexcoloryes" class="radio__label">YES, Please</label>
+    </div>
+
+  </div>
+
+  <div class="m-textinput latexcolor" style="text-align: left; display: none;">
+ <p class="fieldtitle">Please Add Latex Balloons Color<span class="tooltip" tooltip="Kindly note: Balloon substitutions may occur based on stock availability. We assure you of comparable quality. Thank you for your understanding.">
+        <!-- Tooltip icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+          <path d="M 25 2 C 12.264481 2 2 12.264481 2 25 C 2 37.735519 12.264481 48 25 48 C 37.735519 48 48 37.735519 48 25 C 48 12.264481 37.735519 2 25 2 z M 25 4 C 36.664481 4 46 13.335519 46 25 C 46 36.664481 36.664481 46 25 46 C 13.335519 46 4 36.664481 4 25 C 4 13.335519 13.335519 4 25 4 z M 25 11 A 3 3 0 0 0 25 17 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 23 23 L 23 36 L 21 36 L 21 38 L 29 38 L 29 36 L 27 36 L 27 21 L 21 21 z"/>
+        </svg>
+        <!-- End of tooltip icon SVG -->
+      </span></p>
+    <div class="material-textfield">
+      <input id="text2" placeholder="" type="text" oninput="validateInput2(this)">
+      <label>Enter Your Latex Balloon Colors Here</label>
+    </div>
+    <p class="helptext">Type Min 2 or Max 3 Colors</p>
+    <div id="errorText2" class="error-text" style="display:none; color:red;">This field is required</div>
+  </div>
+
+  <button id="addToCartButton" onchange="validateForm(event)">ADD TO CART</button>
+</form>
+
+<script>
+   
+  function allowAlphanumeric(event) {
+  const key = String.fromCharCode(event.keyCode);
+  return /[a-zA-Z0-9]/.test(key);
+}
+
+    var addToCartButton = document.getElementById("addToCartButton");
+let setcolor = false;
+
+// Validation
+var isValid = true;
+
+function validateInput(input) {
+  const errorText1 = document.getElementById('errorText1');
+  const trimmedText = input.value.trim();
+
+  if (trimmedText.length === 0) {
+    errorText1.textContent = 'This field is required';
+    errorText1.style.color = 'red';
+    errorText1.style.display = 'block';
+    addToCartButton.style.backgroundColor = "#8a8a8a";
+    isValid = false;
+  }
+else {
+    // Check if the input is alphanumeric
+    const alphanumericRegex = /^[a-zA-Z0-9]+$/;
+    if (!alphanumericRegex.test(trimmedText)) {
+      errorText1.textContent = 'Please enter only alphanumeric characters';
+      errorText1.style.color = 'red';
+      errorText1.style.display = 'block';
+      addToCartButton.style.backgroundColor = "#8a8a8a";
+      isValid = false;
+    } else {
+      // Input is valid
+      errorText1.textContent = '';
+      errorText1.style.display = 'none';
+      addToCartButton.style.backgroundColor = "#880014";
+      isValid = true;
+    }
+  }
+}
+
+document.getElementById('text1').addEventListener('input', function(event) {
+    var inputValue = event.target.value;
+
+    // Remove anything that is not a letter and limit the length to 1
+    var cleanedInput = inputValue.replace(/[^0-9]/g, '').slice(0, 1);
+
+    // Set the cleaned input back to the input field
+    event.target.value = cleanedInput;
+});
+
+function validateInput2(input) {
+  var errorText2 = document.getElementById('errorText2');
+  var trimmedText = input.value.trim();
+
+  if (trimmedText.length === 0) {
+    errorText2.textContent = 'This field is required';
+    errorText2.style.color = 'red';
+    errorText2.style.display = 'block';
+    isValid = false;
+  } else {
+    errorText2.textContent = 'Is valid';
+    errorText2.style.color = 'green';
+    errorText2.style.display = 'block';
+    isValid = true;
+        if (isValid) {
+      addToCartButton.style.backgroundColor = "#880014";
+    } else {
+      addToCartButton.style.backgroundColor = "##8a8a8a";
+    }
+  }
+}
+
+function toggleColorSelect1(className, show) {
+  var colorSelect = document.getElementsByClassName(className)[0];
+  colorSelect.style.display = show ? 'block' : 'none';
+
+  if (show) {
+    const selectElement = document.querySelector('.textcolorselect select');
+    const selectedValue = selectElement.value;
+    console.log('Selected Color:', selectedValue);
+  }
+
+  if (!show) {
+    var errorText = document.querySelector("." + className + " .error-text");
+    errorText.style.display = "none";
+  }
+}
+
+function toggleColorSelect2(className, show) {
+  var colorSelect = document.getElementsByClassName(className)[0];
+  colorSelect.style.display = show ? 'block' : 'none';
+  addToCartButton.style.backgroundColor = show ? "#8a8a8a" : "#880014";
+
+  if (!show) {
+    var errorText = document.querySelector("." + className + " .error-text");
+    errorText.style.display = "none";
+  }
+}
+
+function validateForm(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  var text1 = document.getElementById("text1").value;
+  var text2 = document.getElementById("text2").value;
+
+  var errorText1 = document.getElementById("errorText1");
+  var errorText2 = document.getElementById("errorText2");
+
+  var trimmedText1 = text1.trim();
+
+  // Reset error messages
+  errorText1.style.display = "none";
+  errorText2.style.display = "none";
+
+  if (document.getElementById("latexcoloryes").checked && text2.trim() === "") {
+    errorText2.style.display = "block";
+    isValid = false;
+  }
+  if (isValid) {
+
+console.log('Form Values:', {
+  text1: document.getElementById("text1").value,
+  text2: document.getElementById("text2").value,
+  latexcolor: document.querySelector('.text-color input[type="radio"]:checked').value
+});
+let selectedTextColor;
+document.getElementById("textcoloryes").addEventListener("change", function() {
+  if (this.checked) {
+    const selectElement = document.querySelector('.textcolorselect select');
+    selectedTextColor = selectElement.value;
+    
+    console.log('Selected Color:', selectedTextColor);
+    if (isValid) {
+      addToCartButton.style.backgroundColor = "#880014";
+    } else {
+      addToCartButton.style.backgroundColor = "##8a8a8a";
+    }
+  }
+});
+
+    
+    addToCartButton.style.backgroundColor = "#880014";
+    addToCartButton.disabled = false; // Disable button until submission completes
+
+    const formData = {
+      'items': [{
+        'id': {{ product.first_available_variant.id }},
+        'quantity': 1,
+        "properties": {
+          "Letter Balloon Color":document.getElementById("text1").value,
+          "Balloon Text Color":document.querySelector('.textcolorselect select').value,
+          "latex Balloon Color":document.getElementById("text2").value
+        }
+      }]
+    };
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'xmlhttprequest'
+      },
+      body: JSON.stringify(formData)
+    }).then(response => response.json()).then(data => {
+      window.location.href = '{{ window.Shopify.routes.root }}/cart';
+    }).catch((error) => {
+      console.error('Error:', error);
+    }).finally(() => {
+      addToCartButton.disabled = false; // Enable button after submission completes
+    });
+  } else {
+    return false; // Prevent form submission if validation fails
+  }
+}
+
+addToCartButton.addEventListener("click", function(event) {
+  validateForm(event);
+});
+</script>
+
+
+
+
+
+
+
+
+    
+<style>
+
+.m-textinput {
+  height: auto;
+  display: flex;
+  align-items: center;
+  /* margin-top: 3rem; */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.m-textinput .material-textfield {
+  position: relative;  
+}
+
+.m-textinput label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: .1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+.m-textinput input {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 300px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 0.2rem 0.4rem;
+    color: gray;
+    min-height: 42px;
+    transition: 0.1s ease-out;
+}
+.m-textinput input:focus {
+  border-color: #6200EE;  
+}
+.m-textinput input:focus + label {
+  color: #000000;
+  top: 0;
+  transform: translateY(-50%) scale(.9);
+  background:#ffffff;
+}
+.m-textinput input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(.9);
+}
+
+
+
+/* radio btn */
+body, html {
+
+}
+ *, *:before, *:after {
+	 box-sizing: inherit;
+
+}
+ .m-select {
+     margin-top: 3rem;
+	 padding: 0;
+	 box-sizing: border-box;
+	 width: 100%;
+}
+.m-select .title {
+	 display: block;
+	 margin: 0 0 20px;
+	 font-size: 24px;
+	 text-transform: uppercase;
+}
+.m-select .radio {
+	 display: inline-block;
+	 position: relative;
+	 margin: 0 0 10px;
+	 font-size: 16px;
+	 line-height: 24px;
+}
+.m-select .radio__input {
+	 position: absolute;
+	 top: 4px;
+	 left: 0;
+	 width: 36px;
+	 height: 20px;
+	 opacity: 0;
+	 z-index: 0;
+}
+.m-select .radio__label {
+	 display: block;
+	 padding: 0 0 0 24px;
+	 cursor: pointer;
+}
+.m-select .radio__label:before {
+	 content: '';
+	 position: absolute;
+	 top: 4px;
+	 left: 0;
+	 width: 16px;
+	 height: 16px;
+	 background-color: transparent;
+	 border: 2px solid rgba(0, 0, 0, .54);
+	 border-radius: 14px;
+	 z-index: 1;
+	 transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.m-select .radio__label:after {
+	 content: '';
+	 position: absolute;
+	 top: 8px;
+	 left: 4px;
+	 width: 8px;
+	 height: 8px;
+	 background-color: #3f51b5;
+	 border-radius: 50%;
+	 z-index: 2;
+	 transform: scale(0, 0);
+	 transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.m-select .radio__input:checked + .radio__label:before {
+	 border-color: #3f51b5;
+}
+.m-select .radio__input:checked + .radio__label:after {
+	 transform: scale(1, 1);
+}
+
+
+/* dropdown */
+
+.m-dropdown .select {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+  width: 350px;
+}
+
+.m-dropdown .select-text {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 300px;
+  padding: 0px 0px 0px 4px;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+/* Remove focus */
+.m-dropdown .select-text:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+/* Use custom arrow */
+.m-dropdown .select .select-text {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* .m-dropdown .select:after {
+  position: absolute;
+  top: 18px;
+  right: 37px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+} */
+
+/* LABEL ======================================= */
+.m-dropdown .select-label {
+  color: rgba(0,0,0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+.m-dropdown .select-text:focus ~ .select-label,
+.m-dropdown .select-text:valid ~ .select-label {
+  color: #2F80ED;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+.m-dropdown .select-bar {
+  position: relative;
+  display: block;
+  width: 350px;
+}
+
+.m-dropdown .select-bar:before,
+.m-dropdown .select-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #2F80ED;
+  transition: 0.2s ease all;
+}
+
+.m-dropdown .select-bar:before {
+  left: 50%;
+}
+
+.m-dropdown .select-bar:after {
+  right: 50%;
+}
+
+/* active state */
+.m-dropdown .select-text:focus ~ .select-bar:before,
+.m-dropdown .select-text:focus ~ .select-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.m-dropdown .select-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+ .m-select, .m-dropdown {
+    margin-top: 3rem;
+}
+  p {
+    margin-bottom: 5px;
+     margin-top: 5px;
+}
+
+.latexcolor {
+    /* margin-bottom: 3rem; */
+}
+
+span.tooltip svg {
+    width: 15px;
+  height:15px;
+}
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  p.fieldtitle {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-weight: 700;
+        line-height: 0;
+    margin-bottom: 1.5rem;
+}
+  .m-textinput label {
+    font-weight: 200;
+    pointer-events: none;
+    font-size: 14px;
+  }
+  .m-textinput input {
+    color: black !important;
+    padding-left: 10px !important;
+  }
+  .helptext{
+    font-size: 12px;
+    line-height: 8px;
+    color: #313131;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  form#myForm {
+    /* padding: 30px 30px 30px 0; */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* font-family:Poppins, sans-serif; */
+}
+
+
+  /* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+  left: 50%;
+  transform: translate(-50%, -.5em);
+}
+  /* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards;
+}
+
+  /* START TOOLTIP STYLES */
+[tooltip] {
+  position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+    content: attr(tooltip);
+    text-align: center;
+    min-width: 30em;
+    max-width: 262px;
+    white-space: initial;
+    padding: 1ch 1.5ch;
+    border-radius: 4px;
+    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+    background: #880014;
+    color: #fff;
+    font-size: 12px;
+    z-index: 1000;
+    font-weight: 200;
+    overflow-wrap: break-word;
+    height: 60px;
+    word-wrap: break-word;
+    line-height: 15px;
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+  #myForm{
+    	font-family: "DM Sans", sans-serif !important;
+	line-height: 1.5;
+	background-color: #ffffff;
+	padding: 0 2rem;
+    	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+            padding: 30px;
+    box-shadow: 0 10px 20px 0 rgba(153, 153, 153, 0.25);
+  }
+  button#addToCartButton {
+    font: inherit;
+    font-size: 1.25rem;
+    padding: 2em;
+    width: 100%;
+    font-weight: 500;
+    background-color: #8a8a8a;
+    border-radius: 6px;
+    color: #FFF;
+    border: 0;
+
+}
+  label.radio__label {
+    font-size: 12px;
+}
+  .radio {
+    display: flex;
+    gap: 11px;
+    margin-bottom: 10px;
+}
+    
+#myForm  input[type=radio] {
+        accent-color: #880014;
+  }
+  p.fieldtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #620d0d;
+}
+
+  input#text2 {
+    text-transform: lowercase;
+    font-weight: 200;
+    font-size: 16px;
+}
+    @media(max-width:768px){
+    p.fieldtitle {
+    line-height: 25px;
+}
+  }
+</style>
+

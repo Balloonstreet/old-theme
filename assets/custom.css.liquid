@@ -1,0 +1,43 @@
+/*-----------------------------------------------------------------------------/
+/ Custom Theme CSS
+/-----------------------------------------------------------------------------*/
+/*---------------- Global Custom CSS -------------------*/
+{{ settings.global_css }}
+
+/*---------------- Custom CSS for only desktop -------------------*/
+@media (min-width: 1025px) {
+  {{ settings.desktop_css }}
+}
+
+/*---------------- Custom CSS for tablet, mobile -------------------*/
+@media (max-width: 1024px) {
+  {{ settings.tablet_mobile_css }}
+}
+
+/*---------------- Custom CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  {{ settings.tablet_css }}
+}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+  {{ settings.mobile_css }}
+}
+
+div#t4s-mini_cart div#order-slots {
+    display: none;
+}
+
+div#t4s-mini_cart .t4s-cat__imgtrust {
+    display: none !important;
+  height: 0;
+    opacity: 0;
+}
+#t4s-mini_cart .t4s-cat__imgtrust {
+    margin-top: 10px;
+    display: none !important;
+}
+
+div#t4s-mini_cart button.t4s-btn__checkout.t4s-btn.t4s-btn-base.t4s-btn-style-default.t4s-btn-color-primary.t4s-btn-effect-default.t4s-w-100.t4s-justify-content-center.t4s-truncate {
+    display: none;
+}

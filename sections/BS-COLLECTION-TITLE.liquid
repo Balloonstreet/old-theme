@@ -1,0 +1,51 @@
+{% schema %}
+{
+  "name": "BS-COLLECTION-TITLE",
+  "settings": [
+
+
+  ],
+  "presets": [
+    {
+      "name": "BS-COLLECTION-TITLE",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="bs-container">
+    <h1 class="bs-title">{{ section.settings.title }}</h1>
+    <p class="bs-description">
+        {{ section.settings.description }}
+    </p>
+</div>
+
+<style>
+.bs-container, .bs-container * {
+    margin: 0;
+    padding: 0;
+}
+
+.bs-container {
+    padding: 20px;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.bs-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.bs-description {
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #333;
+}
+
+.bs-description a {
+    color: #800080; /* Purple color for the link */
+    text-decoration: underline;
+}
+</style>

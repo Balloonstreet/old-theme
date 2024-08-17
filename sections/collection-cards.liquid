@@ -1,0 +1,141 @@
+{% schema %}
+{
+  "name": "Collection Cards",
+  "settings": [
+                    {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+                {
+          "type": "text",
+          "id": "url",
+          "label": "Url",
+                  "default":"#"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Image Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Cards",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+<div class="b-maincollection-container">
+<h2>{{ section.settings.heading }}</h2>
+<div class="b-collection-container">
+  {% for block in section.blocks %}
+
+         <a href="{{ block.settings.url }}" class="b-collection-card">
+        <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.alt_text }}">
+        <p>{{ block.settings.title }}</p>
+        </a>
+
+  {% endfor %}
+</div>
+</div>
+<style>
+.b-collection-container a p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: .02em;
+    color: #1c2120;
+    margin-top: 10px;
+}
+.b-maincollection-container h2 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 14px;
+    text-align: center;
+    color: #1c2120;
+}
+.b-maincollection-container {
+    padding: 20px;
+  text-align: center;
+}
+.b-collection-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.b-collection-card {
+    flex: 0 0 auto;
+    width: 13%;
+    overflow: hidden;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.b-collection-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.b-collection-card:hover {
+    transform: scale(1.05);
+}
+
+/* Custom scrollbar styles */
+.b-collection-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.b-collection-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.b-collection-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.b-collection-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .b-collection-container {
+        gap: 10px;
+    }
+
+    .b-collection-card {
+        width: 120px;
+    }
+}
+</style>

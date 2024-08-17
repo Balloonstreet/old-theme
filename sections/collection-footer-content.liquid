@@ -1,0 +1,45 @@
+{% schema %}
+{
+  "name": "collection footer content",
+  "settings": [
+
+
+  ],
+  "presets": [
+    {
+      "name": "collection footer content"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="collection-footer-content">
+  {{ collection.description }}
+</div>
+<style>
+ .collection-footer-content h5, .collection-footer-content h4, .collection-footer-content h3, .collection-footer-content h2 {
+    font-size: 18px;
+    text-align: left;
+    width: auto;
+    padding-bottom: 10px;
+    color: #131313;
+    font-weight: 600;
+}
+ .collection-footer-content p {
+    padding-bottom: 10px;
+    line-height: 1.5em;
+    font-size: 14px;
+    word-break: break-word;
+}
+  @media only screen and (min-width: 767px) {
+    .collection-footer-content{
+          
+        width: 90%;
+        max-width: 1440px;
+        text-align: left;
+        margin: -1px auto auto;
+        padding: 10px;
+ padding-top: 36px;
+    }
+}
+</style>

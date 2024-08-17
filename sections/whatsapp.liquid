@@ -1,0 +1,81 @@
+{% if section.settings.number != "" %}
+<div id="whatsapp-widget" class="{{ section.settings.position }}">
+  <a href="https://wa.me/{{ section.settings.number }}" target="_blank" alt="Chat on WhatsApp" title="{{ shop.name }} chat on WhatsApp">
+    <img src="{{ section.settings.icon | img_url: 'x48' }}" alt="Chat on WhatsApp" title="{{ shop.name }} chat on WhatsApp" />
+  </a>
+</div>
+<style>
+  #shopify-section-whatsapp{
+    position: fixed;
+    margin: 1rem;
+    z-index: 3;
+    {% if section.settings.position == "top-left" %}
+    top:0;left:0;
+    {% elsif section.settings.position == "top-center" %}
+    top:0;left:50%;transform: translateX(-50%);
+    {% elsif section.settings.position == "top-right" %}
+    top:0;right:0;
+    {% elsif section.settings.position == "bottom-left" %}
+    bottom:0;left:0;
+    {% elsif section.settings.position == "bottom-center" %}
+    bottom:0;left:50%;transform: translateX(-50%);
+    {% elsif section.settings.position == "bottom-right" %}
+    bottom:0;right:0;
+    {% endif %}
+  }
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Whatsapp Intergration",
+    "settings": [
+      {
+        "id": "number",
+        "type": "number",
+        "label": "Enter your WhatsApp number"
+      },
+      {
+        "id": "icon",
+        "type": "image_picker",
+        "label": "WhatsApp Logo"
+      },
+      {
+        "id": "position",
+        "type": "select",
+        "label": "Position",
+		"options": [
+          {
+            "value": "top-left",
+            "label": "Top Left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top Center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top Right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom Left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom Center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom Right"
+          }
+		]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,228 @@
+
+<style>
+
+
+  {%- if section.settings.hide_collection_title -%}
+    .collection-header-con h1 {
+    display: none;
+}
+.MainCollectionHeaderWp .sht-mask:before{
+    display: none;
+}    
+{% endif %}
+.collect-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+ .MainCollectionHeaderWp .sht-mask:before {
+    background: rgb(0 0 0 / 50%);
+}
+.collection-header-con {
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+
+}
+  .collection-header-con p {
+    font-size: 18px;
+    line-height: 26px;
+    width: 60%;
+}
+    .collection-header-con h1 {
+    font-size: 40px;
+}  
+.MainCollectionHeaderWp .sht-mask:before {
+    background: rgb(0 0 0 / 50%);
+}
+  .MainCollectionHeaderWp {
+    position: relative;
+}
+  .sht-mask:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(240, 240, 240,calc(0 / 100));
+    pointer-events: none;
+    z-index: 1;
+}
+  .MainCollectionHeaderWp .ElementExceutionBanner img {
+    object-fit: cover;
+}
+  .MainCollectionHeaderWp p{
+    color: white;
+     font-size: 18px;
+}
+.collection-header-con h1 {
+    font-size: 20px;
+    color: white;
+}
+  @media (max-width:749px){
+      .subtext {
+    font-size: 10px;
+}
+  .collection-header-con p {
+width: 90%;
+        font-size: 14px;
+        line-height: 20px;
+}
+  
+    .collection-header-con {
+    width: 100%;
+}
+    .collection-header-con h1 {
+    font-size: 20px;
+}
+    .MainCollectionHeaderWp .ElementExceutionBanner img {
+    height: 250px;
+}
+  }
+  @media (max-width: 480px){
+    .MainCollectionHeaderWp .ElementExceutionBanner img {
+    height: 200px;
+}
+  }
+    @media (min-width: 750px){
+    .onlyForMobile, .mobile_image {
+    display: none !important;
+}
+  }
+  @media (max-width: 749px){
+.onlyForDesktop, .desktop_image {
+    display: none !important;
+}
+  }
+
+</style>
+
+{% liquid
+  assign sizes = '(min-width: 361px) calc(100vw - (var(--gutter-container) * 2))'
+  assign collection_media = collection.image.src | image_url: width: collection.image.width | image_tag: widths: '320, 450, 550, 750, 950, 1024, 1200', sizes: sizes, alt: collection.title, class: 'media h-100 w-100 of-cover'
+%}
+{%- if section.settings.show_collection_image -%}
+  {% comment %}{% assign section_style ='style="--mh-xs: 40vh;--mh-sm:30vh;--mh-md:50vh"' %}{% endcomment %}
+  {% capture collection_image %}
+    <div class="p-absolute w-100 h-100 left-0 sht-mask ElementExceutionBanner" style="--overlay: {{ section.settings.image_overlay_opacity }}">
+      {% assign MapVideoImage = collection.metafields.custom.desktop_collection_banner | file_url %}
+      {% if MapVideoImage contains 'videos' %}
+        <div class="VideosLoadedKeyFrame">
+          {% if collection.metafields.custom.desktop_collection_banner != blank %}
+            {{ collection.metafields.custom.desktop_collection_banner.value | video_tag:loop:true, autoplay:true, muted:true, controls:false, class:'onlyForDesktop ' }}
+          {% endif %}
+          {% if collection.metafields.custom.mobile_collection_banner != blank %}
+              {{ collection.metafields.custom.mobile_collection_banner.value | video_tag:loop:true, autoplay:true, muted:true, controls:false, class:'onlyForMobile ' }}
+          {% else %}
+            {% if collection.metafields.custom.desktop_collection_banner != blank %}
+              {{ collection.metafields.custom.desktop_collection_banner.value | video_tag:loop:true, autoplay:true, muted:true, controls:false, class:'onlyForMobile ' }}
+            {% endif %}
+          {% endif %}  
+        </div>
+      {% else %}
+        {% if collection.metafields.custom.desktop_collection_banner != blank and collection.metafields.custom.mobile_collection_banner != blank %}
+          {% if collection.metafields.custom.desktop_collection_banner != blank %}
+            {{ collection.metafields.custom.desktop_collection_banner | image_url:width:collection.metafields.custom.desktop_collection_banner.width | image_tag: fetchpriority: 'high', class:'onlyForDesktop h-100 ' }}
+          {% endif %}
+        {% if collection.metafields.custom.mobile_collection_banner != blank %}
+          {{ collection.metafields.custom.mobile_collection_banner | image_url:width:collection.metafields.custom.mobile_collection_banner.width | image_tag: fetchpriority: 'high', class:'onlyForMobile h-100 ' }}
+        {% else %}
+          {% if collection.metafields.custom.desktop_collection_banner != blank %}
+            {{ collection.metafields.custom.desktop_collection_banner | image_url:width:collection.metafields.custom.desktop_collection_banner.width | image_tag: fetchpriority: 'high', class:'onlyForMobile h-100 ' }}
+          {% endif %}
+        {% endif %}
+        {% else %}
+          <!-- {% render 'image', image_item: collection_media, image_wrap_classes: 'h-100', image_classes: 'h-100 ' %} -->
+        {% endif %}
+      {% endif %}
+      <div class="collection-header-con">
+        <div class="collect-content">
+        <h1>{{- collection.title | escape -}}</h1>
+        <p>{{ collection.description }}</p>
+          </div>
+      </div>
+    </div>
+  {% endcapture %}
+  
+{%- endif -%}
+
+{%- if section.settings.show_description and collection.description != blank -%}
+  {% capture description %}
+    <div class="s-header__desc m-sides text-block js-animate anm anm-fadeInUpSmall" >{{- collection.description -}}</div>
+  {% endcapture %}
+{%- endif -%}
+
+<div class="MainCollectionHeaderWp {% if collection.metafields.custom.desktop_collection_banner == blank and collection.metafields.custom.mobile_collection_banner == blank and collection_media == blank %} NoImageWrap {% endif %}" data-ui-component="Main Collection Header">
+  <div class="s-card card--content-inner d-flex middle-xs p-relative {{ section.settings.color_scheme }}">
+    {{ collection_image }}
+
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.collection_header.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:general.settings.headers.header_general.content"
+    },
+    {
+      "type": "range",
+      "unit": "%",
+      "max": 90,
+      "min": 0,
+      "step": 1,
+      "default": 30,
+      "id": "image_overlay_opacity",
+      "label": "t:general.settings.overlay_opacity.label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:general.settings.color_scheme.label",
+      "info": "t:general.settings.color_scheme.info",
+      "default": "color-scheme-1 background",
+      "options": [
+        {
+          "value": "color-scheme-1 background",
+          "label": "t:general.settings.scheme_1.label"
+        },
+        {
+          "value": "color-scheme-2 background",
+          "label": "t:general.settings.scheme_2.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "t:sections.collection_header.settings.show_collection_image.label",
+      "default": true
+    },
+        {
+      "type": "checkbox",
+      "id": "hide_collection_title",
+      "label": "Hide collection title",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.collection_header.settings.show_description.label",
+      "info": "t:sections.collection_header.settings.show_description.info",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name":"collection header"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+{% schema %}
+  {
+    "name": "BS-COLLECTION-FOOTER",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Text Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      },
+      {
+        "type": "list_block",
+        "name": "List Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "List Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "BS-COLLECTION-FOOTER",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="bs-container">
+  {% for block in section.blocks %}
+    {% if block.type == 'text_block' %}
+      <h2 class="bs-section-title">{{ collection.title }}</h2>
+      <p class="bs-text">{{ collection.description }}</p>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .bs-container, .bs-container * {
+      margin: 0;
+      padding: 0;
+  }
+
+  .bs-container {
+      padding: 20px;
+      max-width: 1024px;
+      margin: auto;
+  }
+
+  .bs-section-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+  }
+
+  .bs-subsection-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+  }
+
+  .bs-text {
+      font-size: 1em;
+      line-height: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+  }
+
+  .bs-list {
+      list-style-type: decimal;
+      margin: 10px 0 20px 20px;
+  }
+
+  .bs-list-item {
+      margin-bottom: 10px;
+  }
+
+  .bs-link {
+      color: #800080; /* Purple color for the link */
+      text-decoration: underline;
+  }
+</style>
